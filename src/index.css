@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-zinc-900 transition-colors duration-300 overflow-hidden;
+  }
+  body.dark {
+    @apply bg-[#131314] text-zinc-100;
+  }
+}
+
+/* Gemini-like gradients and shadows */
+.gemini-gradient {
+  background: linear-gradient(74deg, #4285f4 0, #9b72cb 9%, #d96570 20%, #d96570 24%, #9b72cb 35%, #4285f4 44%, #9b72cb 50%, #d96570 56%, #131314 75%, #131314 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gemini-sidebar {
+  @apply bg-[#f0f4f9] dark:bg-[#1e1f20] transition-all duration-300;
+}
+
+.gemini-input-container {
+  @apply bg-[#f0f4f9] dark:bg-[#1e1f20] rounded-[28px] border-none shadow-none;
+}
+
+.gemini-message-ai {
+  @apply bg-transparent;
+}
+
+.gemini-message-user {
+  @apply bg-[#f0f4f9] dark:bg-[#1e1f20] rounded-[18px] px-4 py-2;
+}
+
+/* Cyber/Breach elements integrated into Gemini style */
+.breach-glow {
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+.breach-border {
+  @apply border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.05)];
+}
+
+.dark .markdown-body code {
+  @apply bg-zinc-800 text-red-400;
+}
+
+.dark .markdown-body pre {
+  @apply bg-[#0e0e0e] border border-zinc-800;
+}
+
+.markdown-body {
+  @apply text-[15px] leading-[1.6];
+}
+
+.markdown-body p {
+  @apply mb-4 last:mb-0;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  @apply font-semibold mt-6 mb-2;
+}
+
+.markdown-body ul, .markdown-body ol {
+  @apply ml-6 mb-4 list-disc;
+}
+
+.markdown-body code {
+  @apply bg-gray-100 px-1.5 py-0.5 rounded text-red-600 font-mono text-[13px];
+}
+
+.markdown-body pre {
+  @apply bg-zinc-900 text-zinc-100 p-4 rounded-xl mb-4 overflow-x-auto;
+}
+
+.markdown-body pre code {
+  @apply bg-transparent p-0 text-inherit text-[13px];
+}
+
+/* Custom scrollbar for Gemini feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-300 dark:bg-zinc-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-400 dark:bg-zinc-600;
+}
+
+.scanline {
+  width: 100%;
+  height: 100px;
+  z-index: 5;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(239, 68, 68, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0.1;
+  position: absolute;
+  bottom: 100%;
+  animation: scanline 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% { bottom: 100%; }
+  100% { bottom: -100px; }
+}
